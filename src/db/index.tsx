@@ -26,7 +26,7 @@ const homePage: IHome = {
   email: "nourjabernaamah@gmail.com",
   name: "nour",
   personal_image: "/public/pink1.jpg",
-  cv: "/NourNaamah1_cv.pdf",
+  cv: "/CV.pdf",
   linkedIn: "https://www.linkedin.com/in/nour-naamah-871630197/",
   gitLap: "https://github.com/nour",
 };
