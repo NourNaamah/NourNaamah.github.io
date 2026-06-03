@@ -8,7 +8,7 @@ function Home() {
   return (
     <div className="home h-full w-full relative overflow-hidden">
       <LoaderLayout>
-        <div className="container mx-auto relative z-10">
+        <div className="container mx-auto relative z-10 page-enter">
           <Blob />
         </div>
         <motion.div

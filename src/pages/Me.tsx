@@ -12,11 +12,11 @@ const Me = () => {
     <div className="about-page w-full relative">
       <FloatingSparkles />
       <LoaderLayout>
-        <div className="container mx-auto about-shell">
+        <div className="container mx-auto about-shell page-enter">
           <div className="about-heading">
             <span className="about-kicker">About my approach</span>
             <h2 className="about-title">
-              Frontend thinking shaped by product clarity, QA discipline, and
+              Frontend thinking shaped by product clarity, interface craft, and
               communication.
             </h2>
           </div>

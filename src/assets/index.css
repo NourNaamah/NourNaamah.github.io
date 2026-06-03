@@ -126,6 +126,93 @@
   overflow: scroll;
 }
 
+.brand-loader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background:
+    linear-gradient(180deg, rgba(11, 18, 32, 0.88), rgba(8, 14, 24, 0.96)),
+    radial-gradient(circle at 20% 20%, rgba(247, 181, 67, 0.12), transparent 28%);
+}
+
+.brand-loader__glow {
+  position: absolute;
+  inset: auto;
+  width: 48%;
+  height: 48%;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(106, 213, 203, 0.2), transparent 70%);
+  filter: blur(18px);
+  opacity: 0.9;
+}
+
+.brand-loader__ring {
+  position: relative;
+  z-index: 2;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  border-top-color: var(--color-accent);
+  border-right-color: var(--color-accent-2);
+  animation: brandLoaderSpin 1.05s linear infinite;
+}
+
+.brand-loader__ring span {
+  position: absolute;
+  inset: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.08), rgba(8, 13, 24, 0.98));
+}
+
+.brand-loader__shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.02) 28%,
+    rgba(255, 255, 255, 0.09) 48%,
+    rgba(255, 255, 255, 0.02) 68%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: brandLoaderShimmer 1.8s ease-in-out infinite;
+}
+
+@keyframes brandLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes brandLoaderShimmer {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.page-enter {
+  animation: pageEnter 0.55s ease both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 ::selection {
   background-color: rgba(247, 181, 67, 0.92);
   color: #08111d;

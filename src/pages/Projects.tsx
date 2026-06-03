@@ -4,11 +4,10 @@ import "../assets/project.css";
 import { FaEye, FaRegImages } from "react-icons/fa6";
 import { useModal } from "@hooks";
 import SlickSlider, { Settings } from "react-slick";
-import { FloatingSparkles } from "@components";
+import { FloatingSparkles, Loader } from "@components";
 import { projectsPage } from "@db";
 import { useMemo, useState } from "react";
 import { LazyImage } from "react-lazy-images";
-import { Loader } from "@components";
 
 const Projects = () => {
   const [activeDot, setActiveDot] = useState(0);
@@ -24,9 +23,11 @@ const Projects = () => {
         style={{
           width: "10px",
           height: "10px",
-          backgroundColor: activeDot === index ? "#f7b543" : "rgba(255,255,255,0.22)",
+          backgroundColor:
+            activeDot === index ? "#f7b543" : "rgba(255,255,255,0.22)",
           scale: activeDot === index ? "1.3" : "1",
-          boxShadow: activeDot === index ? "0 0 12px rgba(247,181,67,0.5)" : "",
+          boxShadow:
+            activeDot === index ? "0 0 12px rgba(247,181,67,0.5)" : "",
           borderRadius: "50%",
           cursor: "pointer",
         }}
@@ -46,6 +47,7 @@ const Projects = () => {
   return (
     <LoaderLayout>
       <FloatingSparkles />
+
       <SliderModal className="projects-modal">
         <div className="min-h-[420px] relative">
           <SlickSlider {...settings}>
@@ -55,8 +57,15 @@ const Projects = () => {
                   <LazyImage
                     src={item}
                     placeholder={(props: any) => (
-                      <div ref={props.ref}>
-                        <Loader width="1000px" height="360px" />
+                      <div
+                        ref={props.ref}
+                        className="project-loader project-loader--modal"
+                      >
+                        <Loader
+                          width="100%"
+                          height="100%"
+                          label="Loading gallery image"
+                        />
                       </div>
                     )}
                     actual={(props: any) => (
@@ -74,7 +83,7 @@ const Projects = () => {
       </SliderModal>
 
       <section className="projects-page w-full relative">
-        <div className="container mx-auto projects-shell">
+        <div className="container mx-auto projects-shell page-enter">
           <div className="projects-heading">
             <Slide bottom>
               <span className="projects-kicker">Selected frontend work</span>
@@ -95,14 +104,22 @@ const Projects = () => {
 
           <div className="projects-grid">
             {allProjects.map((project, index) => (
-              <Slide key={project.id} left={index % 2 === 0} right={index % 2 !== 0}>
+              <Slide
+                key={project.id}
+                left={index % 2 === 0}
+                right={index % 2 !== 0}
+              >
                 <article className="project-card">
                   <div className="project-media">
                     <LazyImage
                       src={project.main_image}
                       placeholder={(props: any) => (
-                        <div ref={props.ref}>
-                          <Loader width="1000px" height="320px" />
+                        <div ref={props.ref} className="project-loader">
+                          <Loader
+                            width="100%"
+                            height="100%"
+                            label={`Loading ${project.name}`}
+                          />
                         </div>
                       )}
                       actual={(props: any) => (
@@ -122,11 +139,16 @@ const Projects = () => {
                       <h3>{project.name}</h3>
                     </div>
 
-                    <p className="project-description">{project.short_description}</p>
+                    <p className="project-description">
+                      {project.short_description}
+                    </p>
 
                     <div className="project-tech">
                       {project.languages.slice(0, 6).map((item, techIndex) => (
-                        <div key={`${project.id}-${techIndex}`} className="project-tech-icon">
+                        <div
+                          key={`${project.id}-${techIndex}`}
+                          className="project-tech-icon"
+                        >
                           <svg
                             stroke="currentColor"
                             fill="currentColor"
@@ -144,7 +166,12 @@ const Projects = () => {
                     </div>
 
                     <div className="project-actions">
-                      <a target="_blank" rel="noreferrer" href={project.link} className="project-link primary">
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href={project.link}
+                        className="project-link primary"
+                      >
                         <FaEye />
                         <span>Live Preview</span>
                       </a>

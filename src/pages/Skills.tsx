@@ -10,7 +10,7 @@ const Skills = () => {
     <LoaderLayout>
       <FloatingSparkles />
       <section className="skills-page w-full relative">
-        <div className="container mx-auto skills-shell">
+        <div className="container mx-auto skills-shell page-enter">
           <div className="skills-heading">
             <Slide bottom>
               <span className="skills-kicker">Core toolkit</span>

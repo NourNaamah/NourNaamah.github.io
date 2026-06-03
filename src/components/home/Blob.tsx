@@ -19,7 +19,7 @@ const Blob = () => {
         <p className="home-summary">
           I design and build clean, responsive interfaces for dashboards,
           platforms, and business products. My frontend work is guided by strong
-          attention to detail, a QA mindset, and a love for polished user
+          attention to detail, thoughtful structure, and a love for polished user
           experiences.
         </p>
 
@@ -29,7 +29,7 @@ const Blob = () => {
           <span>TypeScript</span>
           <span>Tailwind CSS</span>
           <span>Frontend Architecture</span>
-          <span>QA-Aware Delivery</span>
+          <span>Product-Focused Delivery</span>
         </div>
 
         <div className="home-actions">
@@ -60,7 +60,7 @@ const Blob = () => {
 
             <div className="hero-badge bottom">
               <span className="hero-badge-label">Strength</span>
-              <span className="hero-badge-value">UI clarity, QA discipline, product ownership</span>
+              <span className="hero-badge-value">UI clarity, delivery ownership, product thinking</span>
             </div>
 
             <NavLink to="/projects#projects" className="hero-project-link group">

@@ -8,7 +8,7 @@ const homePage: IHome = {
     "Design-sensitive, responsive, production-ready builds",
     "Clean component architecture and maintainable code",
     "Interactive experiences with performance in mind",
-    "Frontend delivery shaped by a strong QA mindset",
+    "Frontend delivery shaped by structure and consistency",
     "Shipping reliable products, not just pretty screens",
     "Building dashboards, platforms, and business tools",
     "Turning product ideas into usable interfaces",
@@ -18,7 +18,7 @@ const homePage: IHome = {
     "Cross-functional collaboration from concept to launch",
     "Experienced in complex admin and content platforms",
     "Balancing visual detail with engineering discipline",
-    "Frontend work supported by testing experience",
+    "Frontend work supported by careful implementation",
     "Clear communication, coordination, and ownership",
     "Teaching experience that strengthens mentorship",
     "Modern frontend with product-level thinking",
@@ -35,7 +35,7 @@ const homePage: IHome = {
 const mePage: IMe = {
   title: "Frontend Engineer",
   description:
-    "Frontend engineer focused on building polished, responsive web experiences with React and Next.js. My work combines interface craftsmanship, QA discipline, and delivery coordination to create products that feel clear, reliable, and production-ready. I also bring three years of teaching experience in programming, software engineering, and information security, which sharpened my communication, mentoring, and systems thinking.",
+    "Frontend engineer focused on building polished, responsive web experiences with React and Next.js. My work combines interface craftsmanship, structured delivery, and product thinking to create experiences that feel clear, reliable, and production-ready. I also bring three years of teaching experience in programming, software engineering, and information security, which sharpened my communication, mentoring, and systems thinking.",
   projects_info: {
     total_project: 20,
     finished_project: 15,
@@ -46,11 +46,11 @@ const mePage: IMe = {
   experience: [
     {
       company: "Divcodes (2023-now)",
-      position: "Front-End Engineer & QA Coordinator",
+      position: "Front-End Engineer & Delivery Coordinator",
     },
     {
       company: "EdTech (2021-2023)",
-      position: "Front-End Engineer & Junior QA Specialist",
+      position: "Front-End Engineer",
     },
     {
       company: "Academic Teaching Experience (2021-2024)",
@@ -514,7 +514,7 @@ const projectsPage: IProjects[][] = [
       main_image: "/kiaai/kiaai.webp",
       images: [
         "/kiaai/kiaai_1.webp",
-        "/kiaai/kiaai_2.webp",
+        // "/kiaai/kiaai_2.webp",
         "/kiaai/kiaai_3.webp",
       ],
       short_description:

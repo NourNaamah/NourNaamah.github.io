@@ -15,15 +15,15 @@ const IntroSection = () => {
       <div className="about-intro-copy">
         <span className="about-intro-eyebrow">Frontend profile</span>
         <h3 className="about-intro-title">
-          <span className="text-accent">{mePage.title}</span> with QA discipline
-          and delivery ownership.
+          <span className="text-accent">{mePage.title}</span> with thoughtful
+          delivery and product ownership.
         </h3>
         <p className="about-intro-description">{mePage.description}</p>
       </div>
 
       <div className="about-highlight-list">
         <span>React and Next.js product interfaces</span>
-        <span>QA-aware frontend delivery</span>
+        <span>Structured frontend delivery</span>
         <span>Dashboard and platform experience</span>
         <span>Teaching and mentoring mindset</span>
       </div>
