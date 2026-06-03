@@ -2,43 +2,28 @@ import { FC } from "react";
 import "../../assets/sparkles.css";
 
 const FloatingSparkles: FC = () => {
-  const sparkles = Array.from({ length: 10 }, (_, i) => i);
-  const hearts = Array.from({ length: 5 }, (_, i) => i);
-
-  const heartEmojis = ["💖", "💕", "💗", "💓", "💝"];
-  const starEmojis = ["⭐", "🌟", "💫", "✨"];
+  const sparkles = Array.from({ length: 14 }, (_, i) => i);
 
   return (
-    <>
-      <div className="sparkles-container">
-        {sparkles.map((i) => (
-          <div
+    <div className="sparkles-container">
+      {sparkles.map((i) => {
+        const size = 6 + Math.random() * 14;
+
+        return (
+          <span
             key={`sparkle-${i}`}
-            className="sparkle"
+            className="sparkle-dot"
             style={{
               left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${3 + Math.random() * 4}s`,
+              animationDelay: `${Math.random() * 6}s`,
+              animationDuration: `${8 + Math.random() * 6}s`,
+              width: `${size}px`,
+              height: `${size}px`,
             }}
-          >
-            {starEmojis[Math.floor(Math.random() * starEmojis.length)]}
-          </div>
-        ))}
-        {hearts.map((i) => (
-          <div
-            key={`heart-${i}`}
-            className="floating-heart"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 5}s`,
-            }}
-          >
-            {heartEmojis[i % heartEmojis.length]}
-          </div>
-        ))}
-      </div>
-    </>
+          />
+        );
+      })}
+    </div>
   );
 };
 

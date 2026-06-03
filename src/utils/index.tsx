@@ -8,19 +8,19 @@ import {
 const navbar: IColorNavbar[] = [
   {
     id: 0,
-    color: "#ffa117",
+    color: "#6ad5cb",
     icon: <IoPersonOutline />,
     url: "/me",
   },
   {
     id: 1,
-    color: "#f44336",
+    color: "#f7b543",
     icon: <IoHomeOutline />,
     url: "/",
   },
   {
     id: 2,
-    color: "#b145e9",
+    color: "#9cc7ff",
     icon: <IoReceiptOutline />,
     url: "/projects",
   },

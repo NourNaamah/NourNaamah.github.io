@@ -1,84 +1,58 @@
 import { LoaderLayout } from "@layouts";
-import { motion } from "framer-motion";
-import { fadeIn } from "../utils";
 import { IntroSection, TabFactory, FloatingSparkles } from "@components";
 import "../assets/me.css";
 import { useState } from "react";
 import { IoArrowRedoOutline } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
-import { homePage } from "@db";
 
 const Me = () => {
   const [tab, setTab] = useState("Experience");
 
   return (
-    <div className="bg-primary/60 w-full h-full relative ">
+    <div className="about-page w-full relative">
       <FloatingSparkles />
       <LoaderLayout>
-        <div className="w-[300px] absolute -right-16 bottom-[80px] md:-bottom-2 mix-blend-color-dodge animate-pulse duration-75 -rotate-12">
-          {/* <motion.img
-            variants={fadeIn("down", 0.3)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            src="/circles.png"
-            alt="circle"
-            width={200}
-            height={200}
-            className="w-full h-full"
-          /> */}
-        </div>
-        {/* <motion.img
-          variants={fadeIn("up", 0.3)}
-          initial="hidden"
-          animate="show"
-          exit="hidden"
-          src={homePage.personal_image}
-          width={737}
-          height={678}
-          className="container mx-auto mix-blend-color-dodge absolute -left-[190px] md:-left-[370px] bottom-0 h-[80%]"
-        /> */}
+        <div className="container mx-auto about-shell">
+          <div className="about-heading">
+            <span className="about-kicker">About my approach</span>
+            <h2 className="about-title">
+              Frontend thinking shaped by product clarity, QA discipline, and
+              communication.
+            </h2>
+          </div>
 
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 pt-[30px]">
-          <IntroSection />
-          <div className="tabs hidden lg:border-l border-gray-500 md:flex md:items-center md:flex-col md:gap-5 lg:px-[100px]">
-            <div className="flex justify-around gap-6 h-[30px] uppercase">
-              <span
-                className={`flex-1 relative  cursor-pointer ${
-                  tab === "Experience" && "active"
-                } tab`}
-                onClick={() => setTab("Experience")}
-              >
-                Experience
-              </span>
-              {/* <span
-                className={`flex-1 relative  cursor-pointer ${
-                  tab === "Certificate" && "active"
-                } tab`}
-                onClick={() => setTab("Certificate")}
-              >
-                Certificate
-              </span> */}
-            </div>
-            <div>
-              <TabFactory tab={tab} />
+          <div className="about-grid">
+            <IntroSection />
+
+            <div className="about-panel tabs">
+              <div className="about-tabs">
+                <button
+                  type="button"
+                  className={`tab ${tab === "Experience" ? "active" : ""}`}
+                  onClick={() => setTab("Experience")}
+                >
+                  Experience
+                </button>
+              </div>
+              <div className="about-tab-content">
+                <TabFactory tab={tab} />
+              </div>
             </div>
           </div>
+
+          <div className="about-cta-row">
+            <p className="about-cta-copy">
+              Want to see how this experience translates into real product work?
+              Explore the frontend systems, dashboards, and interfaces I have
+              built.
+            </p>
+
+            <NavLink to="skills#me" className="about-cta-link">
+              <span>Visit My Skills</span>
+              <IoArrowRedoOutline />
+            </NavLink>
+          </div>
         </div>
-        <NavLink
-          to="#"
-          className="mt-2 md:mt-10 flex gap-1 transform hover:translate-x-2 hover:text-pink-300 transition-all duration-300 items-center justify-center text-xs group"
-        >
-          <NavLink
-            to="skills#me"
-            className="uppercase z-20 bg-gradient-to-r from-pink-500/20 to-purple-500/20 px-4 py-2 rounded-full border border-pink-400/30 hover:border-pink-400/60 hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300"
-          >
-            Visit My Skills
-          </NavLink>
-          <span className="!text-lg group-hover:scale-125 transition-transform duration-300">
-            <IoArrowRedoOutline />
-          </span>
-        </NavLink>
       </LoaderLayout>
     </div>
   );

@@ -5,56 +5,62 @@ import { mePage } from "@db";
 
 const IntroSection = () => {
   return (
-    <div className="flex flex-col gap-4 items-center  text-[30px] lg:px-[80px]">
-      <span>
-        Software and{" "}
-        <span className="text-accent text-[25px]">{mePage.title}</span> Engineer
-        .
-      </span>
-      <span className="text-[12px] !text-gray-400 text-center lg:text-start">
-        {mePage.description}
-      </span>
+    <motion.div
+      variants={fadeIn("up", 0.15)}
+      initial="hidden"
+      animate="show"
+      exit="hidden"
+      className="about-intro-card"
+    >
+      <div className="about-intro-copy">
+        <span className="about-intro-eyebrow">Frontend profile</span>
+        <h3 className="about-intro-title">
+          <span className="text-accent">{mePage.title}</span> with QA discipline
+          and delivery ownership.
+        </h3>
+        <p className="about-intro-description">{mePage.description}</p>
+      </div>
+
+      <div className="about-highlight-list">
+        <span>React and Next.js product interfaces</span>
+        <span>QA-aware frontend delivery</span>
+        <span>Dashboard and platform experience</span>
+        <span>Teaching and mentoring mindset</span>
+      </div>
+
       <motion.div
         variants={fadeIn("left", 0.3)}
         initial="hidden"
         animate="show"
         exit="hidden"
-        className="grid grid-cols-2 md:grid-cols-4 gap-5 text-center w-full"
+        className="about-stats-grid"
       >
-        <div className="flex flex-col justify-center items-center">
-          <span className="flex text-accent text-[20px] md:text-[30px]">
+        <div className="about-stat-card">
+          <span className="about-stat-value">
             <CountUp delay={1} end={mePage.projects_info.total_project} />+
           </span>
-          <span className="text-[10px] md:text-[14px] text-gray-400">
-            Total Project
-          </span>
+          <span className="about-stat-label">Total Projects</span>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <span className="flex text-accent text-[20px] md:text-[30px]">
+        <div className="about-stat-card">
+          <span className="about-stat-value">
             <CountUp delay={1} end={mePage.projects_info.finished_project} />+
           </span>
-          <span className="text-[10px] md:text-[14px] text-gray-400">
-            Finished Project
-          </span>
+          <span className="about-stat-label">Projects Shipped</span>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <span className="flex text-accent text-[20px] md:text-[30px]">
+        <div className="about-stat-card">
+          <span className="about-stat-value">
             <CountUp delay={2} end={mePage.projects_info.under_development} />+
           </span>
-          <span className="text-[10px] md:text-[14px] text-gray-400">
-            Under Development
-          </span>
+          <span className="about-stat-label">Active Builds</span>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <span className="flex text-accent text-[20px] md:text-[30px]">
+        <div className="about-stat-card">
+          <span className="about-stat-value">
             <CountUp delay={2} end={mePage.projects_info.years_experience} />+
           </span>
-          <span className="text-[10px] md:text-[14px] text-gray-400">
-            Years Of Experience
-          </span>
+          <span className="about-stat-label">Years Experience</span>
         </div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 

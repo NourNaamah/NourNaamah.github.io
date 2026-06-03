@@ -1,47 +1,41 @@
 import { homePage } from "@db";
-import { IoLogoLinkedin, IoLogoGitlab, IoMailOpen } from "react-icons/io5";
+import { IoLogoLinkedin, IoMailOpen } from "react-icons/io5";
 import { FaFileDownload } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
     <div className="container mx-auto min-h-[60px] h-[60px] flex items-center justify-between">
-      <div className="uppercase h-[60px] flex items-center">
-        <span className="text-pink-500">. </span>
-        <span className="text-[12px]">n</span>
-        <span className="text-[8px] !lowercase">o</span>
-        <span className="text-[25px]">ur</span>
-        <span className="text-pink-500">.</span>
+      <div className="uppercase h-[60px] flex items-center gap-2 tracking-[0.24em] text-[11px] text-white/70">
+        <span className="inline-block w-2 h-2 rounded-full bg-[#f7b543] shadow-[0_0_16px_rgba(247,181,67,0.5)]"></span>
+        <span className="text-white text-[28px] font-semibold tracking-[-0.06em] normal-case">
+          Nour
+        </span>
       </div>
-      <div className="grid grid-cols-4 md:gap-4 z-10">
+      <div className="flex items-center gap-2 md:gap-3 z-10">
         <a
           href={`https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${homePage.email}`}
           target="_blank"
-          className="text-gray-300 h-[60px] w-[60px] flex items-center justify-center  hover:text-accent transform hover:scale-150 transition-all duration-300 cursor-pointer text-[20px] "
+          rel="noreferrer"
+          className="text-white/70 h-[44px] w-[44px] flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:text-[#f7b543] hover:border-[#f7b543]/40 hover:bg-[#f7b543]/10 transition-all duration-300 cursor-pointer text-[18px]"
         >
           <IoMailOpen />
         </a>
         <a
           target="_blank"
+          rel="noreferrer"
           href={homePage.linkedIn}
-          className="text-gray-300 h-[60px] w-[60px] flex items-center justify-center  hover:text-accent transform hover:scale-150 transition-all duration-300 cursor-pointer text-[20px]"
+          className="text-white/70 h-[44px] w-[44px] flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:text-[#6ad5cb] hover:border-[#6ad5cb]/40 hover:bg-[#6ad5cb]/10 transition-all duration-300 cursor-pointer text-[18px]"
         >
           <IoLogoLinkedin />
         </a>
-        {/* <a
-          target="_blank"
-          href={homePage.gitLap}
-          className="text-gray-300 h-[60px] w-[60px] flex items-center justify-center  hover:text-accent transform hover:scale-150 transition-all duration-300 cursor-pointer text-[20px]"
-        >
-          <IoLogoGitlab />
-        </a> */}
         <a
           title="DOWNLOAD CV"
           href={homePage.cv}
           download="Nour_CV.pdf"
-          className="text-gray-300 h-[60px] w-[60px] flex items-center justify-center  hover:text-accent transform hover:scale-150 transition-all duration-300 cursor-pointer text-[20px] "
+          className="text-white/70 h-[44px] px-4 flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 hover:text-[#f7b543] hover:border-[#f7b543]/40 hover:bg-[#f7b543]/10 transition-all duration-300 cursor-pointer text-[14px] font-medium"
         >
           <FaFileDownload />
+          <span className="hidden md:inline">CV</span>
         </a>
       </div>
     </div>

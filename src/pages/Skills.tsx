@@ -1,126 +1,74 @@
-import SlickSlider, { Settings } from "react-slick";
 import "../assets/skills.css";
 import { CSSProperties } from "react";
 import { LoaderLayout } from "@layouts";
-import RubberBand from "react-reveal/RubberBand";
 import Slide from "react-reveal/Slide";
-import { motion } from "framer-motion";
-import { fadeIn } from "../utils";
 import { skillsPage } from "@db";
 import { FloatingSparkles } from "@components";
 
 const Skills = () => {
-  const settings: Settings = {
-    dots: false,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    speed: 800,
-    cssEase: "ease-in-out",
-    infinite: true,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          cssEase: "ease-in-out",
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          cssEase: "ease-in-out",
-          dots: false,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          arrows: false,
-          autoplay: true,
-          autoplaySpeed: 2000,
-          cssEase: "ease-in-out",
-          dots: false,
-        },
-      },
-    ],
-  };
   return (
     <LoaderLayout>
       <FloatingSparkles />
-      <div className="bg-primary/60 w-full h-full relative flex flex-col skills">
-        <div className="hidden md:block w-[300px] absolute -right-16 bottom-[80px] md:-bottom-2 mix-blend-color-dodge animate-pulse duration-75 -rotate-12">
-          <motion.img
-            variants={fadeIn("down", 0.3)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            src="/circles.png"
-            alt="circle"
-            width={200}
-            height={200}
-            className="w-full h-full"
-          />
-        </div>
-        
-        <div className="container mx-auto w-[400px] mix-blend-color-dodge absolute -left-[70px] bottom-0 animate-pulse duration-75 rotate-12">
-          <motion.img
-            variants={fadeIn("up", 0.3)}
-            initial="hidden"
-            animate="show"
-            exit="hidden"
-            src="/bulb.png"
-            width={737}
-            height={678}
-            className="w-full h-full"
-          />
-        </div>
-        <div className="min-h-[50px] flex items-end justify-center ">
-          <Slide bottom>
-            <span className="uppercase text-[30px] font-bold title">
-              <span className="text-accent">MY</span> SKILLS
-            </span>
-          </Slide>
-        </div>
-        <div className="container mx-auto h-full w-full lg:w-[100%] transform translate-y-[20%]">
-          <RubberBand>
-            <SlickSlider {...settings}>
-              {skillsPage.map((item) => (
-                <div className="min-h-[250px]">
-                  <div
-                    className={`progress ${item.rate <= 50 ? "less" : ""}`}
-                    style={
-                      { "--i": item.rate, "--clr": item.color } as CSSProperties
-                    }
-                  >
-                    <h3>
-                      {item.rate}
-                      <span>%</span>
-                    </h3>
-                    <h4 className="uppercase">{item.name}</h4>
+      <section className="skills-page w-full relative">
+        <div className="container mx-auto skills-shell">
+          <div className="skills-heading">
+            <Slide bottom>
+              <span className="skills-kicker">Core toolkit</span>
+            </Slide>
+            <Slide bottom>
+              <h2 className="skills-title">
+                The frontend technologies and workflow tools I use to build
+                reliable, polished products.
+              </h2>
+            </Slide>
+            <Slide bottom>
+              <p className="skills-intro">
+                A balanced toolkit across interface development, styling, product
+                implementation, and day-to-day collaboration. I care about clean
+                code, maintainable systems, and smooth delivery.
+              </p>
+            </Slide>
+          </div>
+
+          <div className="skills-grid">
+            {skillsPage.map((item, index) => (
+              <Slide key={item.name} left={index % 3 === 0} right={index % 3 !== 0}>
+                <article
+                  className="skill-card"
+                  style={{ "--clr": item.color } as CSSProperties}
+                >
+                  <div className="skill-ring-wrap">
+                    <div
+                      className="skill-ring"
+                      style={
+                        {
+                          "--percent": `${item.rate}%`,
+                          "--clr": item.color,
+                        } as CSSProperties
+                      }
+                    >
+                      <div className="skill-ring-inner">
+                        <span className="skill-value">
+                          {item.rate}
+                          <span>%</span>
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="w-[150px] h-[20px] bg-[#0504049f] mt-5 transform translate-x-7 rounded-[50%]"></div>
-                </div>
-              ))}
-            </SlickSlider>
-          </RubberBand>
+
+                  <div className="skill-copy">
+                    <h3>{item.name}</h3>
+                    <p>
+                      Strong practical experience applying {item.name} in
+                      frontend product work and delivery-focused implementation.
+                    </p>
+                  </div>
+                </article>
+              </Slide>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </LoaderLayout>
   );
 };
