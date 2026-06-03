@@ -59,8 +59,8 @@ const Skills = () => {
                   <div className="skill-copy">
                     <h3>{item.name}</h3>
                     <p>
-                      Strong practical experience applying {item.name} in
-                      frontend product work and delivery-focused implementation.
+                      Practical experience using {item.name} to build polished,
+                      maintainable interfaces and support reliable product delivery.
                     </p>
                   </div>
                 </article>

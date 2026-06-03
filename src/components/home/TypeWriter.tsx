@@ -1,6 +1,5 @@
 import { homePage } from "@db";
 import { useEffect, useRef } from "react";
-import Zoom from "react-reveal/Zoom";
 
 const TypeWriter = () => {
   const ref = useRef<HTMLSpanElement | null>(null);
@@ -22,11 +21,9 @@ const TypeWriter = () => {
   return (
     <div className="type-writer z-50">
       <span className="hero-kicker">Frontend Portfolio</span>
-      <Zoom>
-        <div className="hero-name uppercase">{homePage.name}</div>
-      </Zoom>
+      <div className="hero-name uppercase">{homePage.name}</div>
       <h1 className="hero-title">Frontend Engineer building thoughtful digital experiences.</h1>
-      <span ref={ref} className="text sec-text text-[#6b384b] xl:!text-xl">
+      <span ref={ref} className="text sec-text xl:!text-xl">
         {" "}
         Frontend Engineer
       </span>

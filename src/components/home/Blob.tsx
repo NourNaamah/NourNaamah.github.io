@@ -69,7 +69,7 @@ const Blob = () => {
                 alt="My projects"
                 width={141}
                 height={148}
-                className="animate-spin-slow"
+                className="hero-project-ring"
               />
               <span>
                 <IoArrowForward />

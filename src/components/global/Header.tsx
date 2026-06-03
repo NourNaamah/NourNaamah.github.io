@@ -29,13 +29,13 @@ const Header = () => {
           <IoLogoLinkedin />
         </a>
         <a
-          title="DOWNLOAD CV"
+          title="Download Frontend CV"
           href={homePage.cv}
           download="Nour_CV.pdf"
-          className="text-white/70 h-[44px] px-4 flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 hover:text-[#f7b543] hover:border-[#f7b543]/40 hover:bg-[#f7b543]/10 transition-all duration-300 cursor-pointer text-[14px] font-medium"
+          className="text-white/80 h-[44px] px-4 md:px-5 flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 hover:text-[#08111d] hover:border-[#f7b543]/30 hover:bg-[#f7b543] hover:shadow-[0_14px_28px_rgba(247,181,67,0.22)] transition-all duration-300 cursor-pointer text-[14px] font-medium"
         >
           <FaFileDownload />
-          <span className="hidden md:inline">CV</span>
+          <span className="hidden md:inline">Frontend CV</span>
         </a>
       </div>
     </div>

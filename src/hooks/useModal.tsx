@@ -62,7 +62,7 @@ const useModal = (): [ElementType<IModal>, ModalResult] => {
                 ref={ref}
               >
                 <div
-                  className="absolute top-4 right-4 text-pink-400 hover:text-pink-300 cursor-pointer z-[1121] transition-all duration-300 hover:scale-110 hover:rotate-90"
+                  className="absolute top-4 right-4 text-[#f7b543] hover:text-[#6ad5cb] cursor-pointer z-[1121] transition-all duration-300 hover:scale-110"
                   onClick={() => close()}
                 >
                   <FaX />

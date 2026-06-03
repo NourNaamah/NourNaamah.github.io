@@ -53,7 +53,7 @@ const mePage: IMe = {
       position: "Front-End Engineer & Junior QA Specialist",
     },
     {
-      company: "Academic Teaching Experience",
+      company: "Academic Teaching Experience (2021-2024)",
       position:
         "Information Engineering Instructor: programming, software engineering, and information security",
     },

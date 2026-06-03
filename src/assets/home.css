@@ -248,8 +248,8 @@
 .hero-badge.bottom {
   left: 1rem;
   bottom: 1rem;
-  width: calc(100% - 7.5rem);
-  padding: 0.95rem 1.15rem;
+  width: calc(100% - 9.35rem);
+  padding: 0.95rem 1.15rem 0.95rem 1.15rem;
 }
 
 .hero-badge-label {
@@ -291,6 +291,10 @@
   height: 92px;
 }
 
+.hero-project-ring {
+  animation: heroOrbitSpin 24s linear infinite;
+}
+
 .hero-project-link span {
   position: absolute;
   color: white;
@@ -300,6 +304,16 @@
 
 .hero-project-link:hover span {
   transform: translateX(6px);
+}
+
+@keyframes heroOrbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .home .wrapper {
@@ -437,6 +451,8 @@
   .hero-project-link {
     width: 92px;
     height: 92px;
+    right: 1rem;
+    bottom: 1rem;
   }
 
   .hero-project-link img {
@@ -498,11 +514,13 @@
   .hero-badge.bottom {
     left: 0;
     bottom: 1rem;
+    width: calc(100% - 7.5rem);
   }
 
   .hero-project-link {
     width: 92px;
     height: 92px;
+    right: 0;
   }
 
   .hero-project-link img {
