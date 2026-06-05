@@ -371,12 +371,12 @@
 
         const enhanceRoute = () => {
           const heroHeading = document.querySelector(".home h1, .home h2");
-          if (heroHeading && !heroHeading.previousElementSibling?.classList.contains("eyebrow")) {
-            const eyebrow = document.createElement("div");
-            eyebrow.className = "eyebrow reveal-up is-visible";
-            eyebrow.textContent = "Portfolio 2026";
-            heroHeading.parentElement?.insertBefore(eyebrow, heroHeading);
-          }
+          // if (heroHeading && !heroHeading.previousElementSibling?.classList.contains("eyebrow")) {
+          //   const eyebrow = document.createElement("div");
+          //   eyebrow.className = "eyebrow reveal-up is-visible";
+          //   eyebrow.textContent = "Portfolio 2026";
+          //   heroHeading.parentElement?.insertBefore(eyebrow, heroHeading);
+          // }
 
           const aboutTabs = document.querySelector(".tabs > div:last-child");
           if (aboutTabs) {

@@ -20,7 +20,7 @@ const TypeWriter = () => {
   }, []);
   return (
     <div className="type-writer z-50">
-      <span className="hero-kicker">Frontend Portfolio</span>
+      <span className="hero-kicker eyebrow">Frontend Portfolio</span>
       <div className="hero-name uppercase">{homePage.name}</div>
       <h1 className="hero-title">Frontend Engineer building thoughtful digital experiences.</h1>
       <span ref={ref} className="text sec-text xl:!text-xl">
